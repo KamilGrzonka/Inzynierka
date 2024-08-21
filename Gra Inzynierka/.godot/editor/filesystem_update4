@@ -1,7 +1,8 @@
-res://World/world.tscn
+res://Utilities/Spawner/spawner.tscn
 res://Utilities/Spawner/spawner.gd
+res://Utilities/Spawner/spawn_info.gd
+res://World/world.tscn
 res://Player/player.tscn
 res://Enemy/enemy.tscn
 res://Utilities/Hitbox/hitbox.tscn
 res://Utilities/Hurtbox/hurtbox.tscn
-res://Utilities/Spawner/spawner.tscn
