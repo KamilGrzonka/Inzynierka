@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://fsdowfkfy151"]
+
+[ext_resource type="Texture2D" uid="uid://bxgxjhawpgphv" path="res://Textures/dirt_full_new.png" id="1_ynq54"]
+
+[node name="Chunk" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_ynq54")
+region_enabled = true
+region_rect = Rect2(256, 256, 256, 256)

@@ -6,3 +6,5 @@ res://Utilities/Hitbox/hitbox.tscn
 res://Utilities/Hurtbox/hurtbox.tscn
 res://Utilities/Spawner/spawner.tscn
 res://Player/Attack/ice_attack.tscn
+res://Terrain/chunk.tscn
+res://World/terrain.gd
