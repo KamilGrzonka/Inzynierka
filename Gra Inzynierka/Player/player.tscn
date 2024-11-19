@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpynx7u1yjy1t"]
+[gd_scene load_steps=7 format=3 uid="uid://bpynx7u1yjy1t"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_jha0h"]
 [ext_resource type="Texture2D" uid="uid://bscigvpg1yjwd" path="res://Textures/Player/player_sprite.png" id="1_mrte3"]
@@ -10,6 +10,9 @@ height = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lil5g"]
 size = Vector2(10, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlm2q"]
+radius = 366.58
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
@@ -39,6 +42,26 @@ collision_mask = 2
 position = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_lil5g")
 
+[node name="Attack" type="Node2D" parent="."]
+
+[node name="IceSpearTimer" type="Timer" parent="Attack"]
+wait_time = 1.5
+
+[node name="IceSpreatAttackTimer" type="Timer" parent="Attack/IceSpearTimer"]
+wait_time = 0.075
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_vlm2q")
+
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+[connection signal="timeout" from="Attack/IceSpearTimer" to="." method="_on_ice_spear_timer_timeout"]
+[connection signal="timeout" from="Attack/IceSpearTimer/IceSpreatAttackTimer" to="." method="_on_ice_spreat_attack_timer_timeout"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 
 [editable path="Hurtbox"]
