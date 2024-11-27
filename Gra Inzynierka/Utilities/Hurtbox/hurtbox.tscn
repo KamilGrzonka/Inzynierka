@@ -11,7 +11,6 @@ script = ExtResource("1_knag4")
 
 [node name="DisableTimer" type="Timer" parent="."]
 wait_time = 0.5
-one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="DisableTimer" to="." method="_on_disable_timer_timeout"]

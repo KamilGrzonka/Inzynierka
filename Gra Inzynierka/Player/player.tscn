@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpynx7u1yjy1t"]
+[gd_scene load_steps=8 format=3 uid="uid://bpynx7u1yjy1t"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_jha0h"]
-[ext_resource type="Texture2D" uid="uid://bscigvpg1yjwd" path="res://Textures/Player/player_sprite.png" id="1_mrte3"]
+[ext_resource type="Texture2D" uid="uid://cbmgfmp22d4gx" path="res://Textures/Player/RUN.png" id="2_1lojs"]
+[ext_resource type="Texture2D" uid="uid://cylnsx2tuspon" path="res://Textures/Player/IDLE.png" id="2_5g1om"]
 [ext_resource type="PackedScene" uid="uid://cb1gfpviskg3s" path="res://Utilities/Hurtbox/hurtbox.tscn" id="3_vvk4r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58lxu"]
-radius = 5.0
-height = 24.0
+radius = 4.0
+height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lil5g"]
-size = Vector2(10, 20)
+size = Vector2(12, 31)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vlm2q"]
 radius = 366.58
@@ -18,9 +19,15 @@ radius = 366.58
 motion_mode = 1
 script = ExtResource("1_jha0h")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mrte3")
-hframes = 2
+[node name="IdleSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_5g1om")
+offset = Vector2(0, -15)
+hframes = 10
+
+[node name="RunSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_1lojs")
+offset = Vector2(0, -15)
+hframes = 16
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -30,16 +37,15 @@ shape = SubResource("CapsuleShape2D_58lxu")
 
 [node name="walkingTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.2
+wait_time = 0.1
 one_shot = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_vvk4r")]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2(2, 2)
+position = Vector2(2, 0.5)
 shape = SubResource("RectangleShape2D_lil5g")
 
 [node name="Attack" type="Node2D" parent="."]

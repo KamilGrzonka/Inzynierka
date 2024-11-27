@@ -4,7 +4,7 @@ extends Area2D
 @onready var collision = $CollisionShape2D
 @onready var disableTimer = $DisableTimer
 
-signal hurt(damage)
+signal hurt(damage, angle, knockback)
 
 
 func _on_area_entered(area):
@@ -21,8 +21,15 @@ func _on_area_entered(area):
 						area.tempdisable() #call hitbox.tempdisable()
 					
 			var damage = area.damage
-			emit_signal("hurt", damage)	 #emit signal hurt
-
-
+			var angle = Vector2.ZERO
+			var knockback = 1
+			if not area.get("angle") == null:
+				angle = area.angle
+			if not area.get("knockback_value") == null:
+				knockback = area.knockback_value
+			emit_signal("hurt", damage, angle, knockback)	 #emit signal hurt
+			# Usuń pocisk po trafieniu
+			if area.has_method("queue_free"): 
+				area.queue_free()  # Usuwa obiekt pocisku
 func _on_disable_timer_timeout():
 	collision.call_deferred("set", "disabled", false) #enables hitbox collisions

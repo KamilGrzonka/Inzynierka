@@ -4,7 +4,7 @@ var level = 1 #starting level of weapon
 var hp = 1 #amount of hits ice spear can take
 var speed = 100 #speed of the missle
 var damage = 5 #damage fo the attack
-var knockback = 100 #knockback value
+var knockback_value = 100 #knockback value
 var attack_size = 1.0 #size of the attack
 
 var target = Vector2.ZERO 
@@ -19,8 +19,14 @@ func _ready():
 			hp = 1
 			speed = 100
 			damage = 5
-			knockback = 100
+			knockback_value = 100
 			attack_size = 1.0
+	#missle will start small then it will scale back to the original size
+	scale = Vector2(0.1, 0.1)
+	#creating a tween
+	var tween = create_tween()
+	tween.tween_property(self,"scale",Vector2(1,1)*attack_size,1).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT) #setting up the tween
+	tween.play() #playing the tween
 
 func _physics_process(delta):
 	position += angle*speed*delta
