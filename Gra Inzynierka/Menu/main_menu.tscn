@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://mjvvj8eywvys"]
+
+[ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_jai5t"]
+[ext_resource type="FontFile" uid="uid://dyvpwf1rs0y0a" path="res://Font/The Last Shuriken.otf" id="2_fgabb"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jai5t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 644.0
+offset_bottom = 363.0
+color = Color(0.663213, 0.300892, 0.297295, 1)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(640, 100)
+layout_mode = 0
+offset_right = 642.0
+offset_bottom = 195.0
+theme_override_fonts/font = ExtResource("2_fgabb")
+theme_override_font_sizes/font_size = 65
+text = "The Last Ronin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 170.0
+offset_right = 370.0
+offset_bottom = 201.0
+text = "Graj"
+
+[node name="InstructionButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 210.0
+offset_right = 370.0
+offset_bottom = 241.0
+text = "Instrukcja"
+
+[node name="SettingsButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 250.0
+offset_right = 370.0
+offset_bottom = 281.0
+text = "Ustawienia"
+
+[node name="ExitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 290.0
+offset_right = 370.0
+offset_bottom = 321.0
+text = "Wyjdź"

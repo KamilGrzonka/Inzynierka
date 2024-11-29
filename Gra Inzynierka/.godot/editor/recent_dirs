@@ -1,8 +1,9 @@
+res://Menu
+res://World
 res://Terrain
 res://Player/Attack
 res://Utilities/Spawner
 res://Utilities/Hurtbox
 res://Utilities/Hitbox
 res://Enemy
-res://World
 res://Player

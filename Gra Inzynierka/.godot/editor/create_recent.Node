@@ -1,3 +1,8 @@
+Button
+Label
+ColorRect
+TextureRect
+VBoxContainer
 Sprite2D
 Node2D
 CollisionShape2D
@@ -7,4 +12,3 @@ AudioStreamPlayer
 AudioListener2D
 AnimationPlayer
 Camera2D
-CharacterBody2D
