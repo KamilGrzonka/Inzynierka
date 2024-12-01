@@ -11,12 +11,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 644.0
 offset_bottom = 363.0
 color = Color(0.663213, 0.300892, 0.297295, 1)
 
 [node name="Label" type="Label" parent="ColorRect"]
 custom_minimum_size = Vector2(640, 100)
+layout_mode = 0
 offset_right = 642.0
 offset_bottom = 195.0
 theme_override_fonts/font = ExtResource("1_3h2ee")

@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvomup8hqlpug"]
 
-[ext_resource type="Script" path="res://Player/Attack/ice_attack.gd" id="1_pfl8i"]
-[ext_resource type="Texture2D" uid="uid://b3d7dqj8derne" path="res://Textures/Items/Weapons/sword.png" id="2_hak6b"]
-[ext_resource type="AudioStream" uid="uid://cr22ewtfhub8c" path="res://Audio/SoundEffect/ice.wav" id="3_k44ip"]
+[ext_resource type="Script" path="res://Player/Attack/basic_attack.gd" id="1_s7ul3"]
+[ext_resource type="Texture2D" uid="uid://b3d7dqj8derne" path="res://Textures/Items/Weapons/sword.png" id="2_r26wo"]
+[ext_resource type="AudioStream" uid="uid://cr22ewtfhub8c" path="res://Audio/SoundEffect/ice.wav" id="3_aw4q8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whknw"]
 size = Vector2(7.07107, 32.5269)
 
-[node name="IceAttack" type="Area2D" groups=["attack"]]
+[node name="BasicAttack" type="Area2D" groups=["attack"]]
 top_level = true
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_pfl8i")
+script = ExtResource("1_s7ul3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_hak6b")
+texture = ExtResource("2_r26wo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
@@ -26,7 +26,7 @@ wait_time = 10.0
 autostart = true
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_k44ip")
+stream = ExtResource("3_aw4q8")
 volume_db = -10.0
 pitch_scale = 5.0
 autoplay = true

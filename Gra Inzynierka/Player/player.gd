@@ -1,14 +1,17 @@
 extends CharacterBody2D
 @onready var idle_sprite = $IdleSprite #get sprite
 @onready var run_sprite = $RunSprite #get sprite
+@onready var hurt_sprite = $HurtSprite #get sprite
 @onready var walkingTimer = get_node("walkingTimer") #get timer
 var movement_speed = 50.0
 var hp = 100
+var is_hurt = false # Flaga obrażeń
+var hurt_duration = 0.35 # Czas trwania animacji obrażeń (w sekundach)
 #attack
-var iceSpear = preload("res://Player/Attack/ice_attack.tscn")
-@onready var iceSpearTimer = get_node("Attack/IceSpearTimer")
-@onready var iceSpearAttackTimer = get_node("Attack/IceSpearTimer/IceSpreatAttackTimer")
-#ice spear
+var iceSpear = preload("res://Player/Attack/basic_attack.tscn")
+@onready var iceSpearTimer = get_node("Attack/BasicAttackTimer")
+@onready var iceSpearAttackTimer = get_node("Attack/BasicAttackTimer/BasicAttackTimer")
+#basic attack
 var basic_attack_ammo = 0
 var basic_attack_base_ammo = 1
 var basic_attack_speed = 1.5
@@ -29,21 +32,33 @@ func movement():
 	if move.x > 0: #changing the side the player is facing according to his direction
 		idle_sprite.flip_h = false
 		run_sprite.flip_h = false
+		hurt_sprite.flip_h = false
 	elif move.x < 0:
 		idle_sprite.flip_h = true
 		run_sprite.flip_h = true
-	# Obsluga zmiany animacji
-	if move != Vector2.ZERO: # Gracz sie porusza
-		if idle_sprite.visible: # Przełacz na RunSprite
+		hurt_sprite.flip_h = true
+	# Animation handling (hurt animation takes priority)
+	if is_hurt:
+		if not hurt_sprite.visible: # Ensure only hurt_sprite is visible
 			idle_sprite.visible = false
-			run_sprite.visible = true
-		update_animation(run_sprite) # Aktualizuj animacje Run
-	else: # Gracz stoi w miejscu
-		if run_sprite.visible: # Przełacz na IdleSprite
 			run_sprite.visible = false
+			hurt_sprite.visible = true
+		update_animation(hurt_sprite) # Update hurt animation
+	elif move != Vector2.ZERO: # Player is moving
+		if idle_sprite.visible: # Switch to RunSprite
+			idle_sprite.visible = false
+			hurt_sprite.visible = false
+			run_sprite.visible = true
+		update_animation(run_sprite) # Update run animation
+	else: # Player is idle
+		if run_sprite.visible: # Switch to IdleSprite
+			run_sprite.visible = false
+			hurt_sprite.visible = false
 			idle_sprite.visible = true
-		update_animation(idle_sprite) # Aktualizuj animacje Idle
-	velocity = move.normalized()*movement_speed #making sure that movement speed is same in every direction
+		update_animation(idle_sprite) # Update idle animation
+	
+# Normalizing movement speed and moving the player
+	velocity = move.normalized() * movement_speed
 	move_and_slide()
 
 # Funkcja do aktualizacji animacji
@@ -63,9 +78,35 @@ func attack():
 
 
 func _on_hurtbox_hurt(damage, _angle, _knockback):
-	hp -= damage #player takes damage
-	print(hp)
+	if is_hurt: # Prevent interrupting ongoing hurt animation
+		return
 
+	hp -= damage # Player takes damage
+	print(hp)
+	is_hurt = true
+	hurt_sprite.visible = true
+	idle_sprite.visible = false
+	run_sprite.visible = false
+	hurt_sprite.frame = 0 # Reset hurt animation to the first frame
+
+# Timer to end hurt animation
+	var hurt_timer = Timer.new()
+	hurt_timer.wait_time = hurt_duration
+	hurt_timer.one_shot = true
+	add_child(hurt_timer)
+
+	hurt_timer.timeout.connect(_end_hurt_animation)
+	hurt_timer.start()
+
+func _end_hurt_animation():
+	is_hurt = false # Reset hurt state
+	hurt_sprite.visible = false
+
+# Restore appropriate sprite after hurt animation
+	if velocity != Vector2.ZERO:
+		run_sprite.visible = true
+	else:
+		idle_sprite.visible = true
 
 func _on_ice_spear_timer_timeout():
 	basic_attack_ammo += basic_attack_base_ammo
