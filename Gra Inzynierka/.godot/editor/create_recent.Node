@@ -1,6 +1,9 @@
-Sprite2D
 Button
+RichTextLabel
+Control
+TextEdit
 Label
+Sprite2D
 ColorRect
 TextureRect
 VBoxContainer
@@ -9,6 +12,3 @@ CollisionShape2D
 Area2D
 Timer
 AudioStreamPlayer
-AudioListener2D
-AnimationPlayer
-Camera2D

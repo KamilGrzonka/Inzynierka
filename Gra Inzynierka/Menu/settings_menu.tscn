@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds55kt6x6vgvg"]
+[gd_scene load_steps=3 format=3 uid="uid://ds55kt6x6vgvg"]
 
+[ext_resource type="Script" path="res://Menu/settings_menu.gd" id="1_bn88c"]
 [ext_resource type="FontFile" uid="uid://dyvpwf1rs0y0a" path="res://Font/The Last Shuriken.otf" id="1_yil46"]
 
 [node name="SettingsMenu" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bn88c")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -26,3 +28,11 @@ theme_override_font_sizes/font_size = 65
 text = "Ustawienia"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 30)
+offset_left = 270.0
+offset_top = 250.0
+offset_right = 370.0
+offset_bottom = 281.0
+text = "Wróć"

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733076687
+::res://::1733164915
 icon.svg::CompressedTexture2D::1730451811002220422::1723009042::1723010142::1::::<><>::
 ::res://Audio/::1732052938
 ::res://Audio/GUI/::1732052938
@@ -17,9 +17,9 @@ Lose.ogg::AudioStreamOggVorbis::6291040436352873620::1723009042::1723010142::1::
 tornado.ogg::AudioStreamOggVorbis::4916904374074778844::1723009044::1723010142::1::::<><>::
 Victory.wav::AudioStreamWAV::8805668421382804537::1723009042::1723010142::1::::<><>::
 woosh.wav::AudioStreamWAV::6572762088020506391::1723009044::1723010142::1::::<><>::
-::res://Enemy/::1732909903
+::res://Enemy/::1733081072
 enemy.gd::GDScript::-1::1732743534::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::2693860948228936153::1732909903::0::1::::<><>::uid://vsjsoe6agehq::::res://Enemy/Enemy/kolbold_weak.png<>res://Enemy/enemy.gd<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn
+enemy.tscn::PackedScene::2693860948228936153::1733081072::0::1::::<><>::uid://vsjsoe6agehq::::res://Enemy/Enemy/kolbold_weak.png<>res://Enemy/enemy.gd<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn
 ::res://Enemy/Enemy/::1732052938
 cyclops.png::CompressedTexture2D::7066413487413102758::1723009044::1723018896::1::::<><>::
 explosion_pixelfied.png::CompressedTexture2D::7195878407481840770::1723009044::1723018896::1::::<><>::
@@ -32,19 +32,19 @@ OnsenJapanDemoRegular.ttf::FontFile::1925513542828997685::1637806000::1732908745
 tenderness.otf::FontFile::1898257195521713602::1723009044::1723010142::1::::<><>::
 The Last Shuriken.otf::FontFile::8888096577163873338::1647597760::1732908745::1::::<><>::
 The Last Shuriken.ttf::FontFile::2042801597323470588::1647597764::1732908745::1::::<><>::
-::res://Menu/::1732909960
-instruction_menu.tscn::PackedScene::273526775347520496::1732909904::0::1::::<><>::uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf
-main_menu.gd::GDScript::-1::1732909496::0::1::::<>Control<>::
-main_menu.tscn::PackedScene::862158605866425734::1732909960::0::1::::<><>::res://Menu/main_menu.gd<>uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf
-settings_menu.tscn::PackedScene::8486432983827586080::1732909904::0::1::::<><>::uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf
-::res://Player/::1732909903
-player.gd::GDScript::-1::1732744194::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::3489630511383866479::1732909903::0::1::::<><>::res://Player/player.gd<>uid://cbmgfmp22d4gx::::res://Textures/Player/RUN.png<>uid://cylnsx2tuspon::::res://Textures/Player/IDLE.png<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
-::res://Player/Attack/::1733076687
+::res://Menu/::1733081073
+instruction_menu.tscn::PackedScene::273526775347520496::1733076766::0::1::::<><>::uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf
+main_menu.gd::GDScript::-1::1733081072::0::1::::<>Control<>::
+main_menu.tscn::PackedScene::862158605866425734::1733081073::0::1::::<><>::res://Menu/main_menu.gd<>uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf
+settings_menu.tscn::PackedScene::8486432983827586080::1733076766::0::1::::<><>::uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf
+::res://Player/::1733081072
+player.gd::GDScript::-1::1733080824::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::3489630511383866479::1733081072::0::1::::<><>::res://Player/player.gd<>uid://cbmgfmp22d4gx::::res://Textures/Player/RUN.png<>uid://cylnsx2tuspon::::res://Textures/Player/IDLE.png<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn<>uid://40hny64pf50b::::res://Textures/Player/HURT.png
+::res://Player/Attack/::1733081072
 basic_attack.gd::GDScript::-1::1732647800::0::1::::<>Area2D<>::
-ice_attack.tscn::PackedScene::8662894214994793186::1733076687::0::1::::<><>::res://Player/Attack/basic_attack.gd<>uid://b3d7dqj8derne::::res://Textures/Items/Weapons/sword.png<>uid://cr22ewtfhub8c::::res://Audio/SoundEffect/ice.wav
-::res://Terrain/::1732909903
-chunk.tscn::PackedScene::388311333555941390::1732909903::0::1::::<><>::uid://bxgxjhawpgphv::::res://Textures/dirt_full_new.png
+basic_attack.tscn::PackedScene::8662894214994793186::1733081072::0::1::::<><>::res://Player/Attack/basic_attack.gd<>uid://b3d7dqj8derne::::res://Textures/Items/Weapons/sword.png<>uid://cr22ewtfhub8c::::res://Audio/SoundEffect/ice.wav
+::res://Terrain/::1733076766
+chunk.tscn::PackedScene::388311333555941390::1733076766::0::1::::<><>::uid://bxgxjhawpgphv::::res://Textures/dirt_full_new.png
 ::res://Textures/::1732052938
 dirt_full_new.png::CompressedTexture2D::4014563285554306079::1723009044::1723010142::1::::<><>::
 ::res://Textures/GUI/::1732052938
@@ -79,16 +79,16 @@ IDLE.png::CompressedTexture2D::6480904485827386645::1731332557::1732648948::1:::
 player_sprite.png::CompressedTexture2D::3654446201862095603::1723009044::1723010142::1::::<><>::
 RUN.png::CompressedTexture2D::4868176629714332223::1731333747::1732648948::1::::<><>::
 ::res://Utilities/::1732052938
-::res://Utilities/Hitbox/::1732909903
+::res://Utilities/Hitbox/::1733081072
 hitbox.gd::GDScript::-1::1723111240::0::1::::<>Area2D<>::
-hitbox.tscn::PackedScene::1314954038598858218::1732909903::0::1::::<><>::res://Utilities/Hitbox/hitbox.gd
-::res://Utilities/Hurtbox/::1732909903
+hitbox.tscn::PackedScene::1314954038598858218::1733081072::0::1::::<><>::res://Utilities/Hitbox/hitbox.gd
+::res://Utilities/Hurtbox/::1733081072
 hurtbox.gd::GDScript::-1::1732647800::0::1::::<>Area2D<>::
-hurtbox.tscn::PackedScene::4897078084234995218::1732909903::0::1::::<><>::res://Utilities/Hurtbox/hurtbox.gd
-::res://Utilities/Spawner/::1733076687
+hurtbox.tscn::PackedScene::4897078084234995218::1733081072::0::1::::<><>::res://Utilities/Hurtbox/hurtbox.gd
+::res://Utilities/Spawner/::1733081072
 spawner.gd::GDScript::-1::1733076687::0::1::::<>Node2D<>::
-spawner.tscn::PackedScene::7727235033256244449::1732909903::0::1::::<><>::res://Utilities/Spawner/spawner.gd<>uid://bem6q4wgp6tg0::::res://Enemy/enemy.tscn<>res://Utilities/Spawner/spawn_info.gd
+spawner.tscn::PackedScene::7727235033256244449::1733081072::0::1::::<><>::res://Utilities/Spawner/spawner.gd<>uid://bem6q4wgp6tg0::::res://Enemy/enemy.tscn<>res://Utilities/Spawner/spawn_info.gd
 spawn_info.gd::GDScript::-1::1724744366::0::1::::Spawn_info<>Resource<>::
-::res://World/::1732909903
+::res://World/::1733081072
 terrain.gd::GDScript::-1::1732054383::0::1::::<>Node2D<>::
-world.tscn::PackedScene::3388425954498534360::1732909903::0::1::::<><>::uid://bpynx7u1yjy1t::::res://Player/player.tscn<>res://World/terrain.gd<>uid://dideoxoxls2gj::::res://Utilities/Spawner/spawner.tscn
+world.tscn::PackedScene::3388425954498534360::1733081072::0::1::::<><>::uid://bpynx7u1yjy1t::::res://Player/player.tscn<>res://World/terrain.gd<>uid://dideoxoxls2gj::::res://Utilities/Spawner/spawner.tscn
