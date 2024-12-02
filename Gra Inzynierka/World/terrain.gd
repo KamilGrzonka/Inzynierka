@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var chunk_size = 256 # Rozmiar jednego chunku (np. 512x512)
-@export var render_distance = 3 # Ile chunków w każdą stronę generować
+@export var chunk_size = 16 # Rozmiar jednego chunku (np. 512x512)
+@export var render_distance = 26 # Ile chunków w każdą stronę generować
 
 @onready var player = get_node("../Player")
 var active_chunks = {} # Słownik przechowujący aktywne chunki
@@ -26,8 +26,30 @@ func update_chunks():
 			remove_chunk(chunk_key)
 
 func spawn_chunk(chunk_key: Vector2):
-	var chunk = preload("res://Terrain/chunk.tscn").instantiate()
+	var chunk_scene = preload("res://Terrain/chunk.tscn")
+	var chunk = chunk_scene.instantiate()
 	chunk.position = chunk_key * chunk_size
+
+	# Wybór tekstury
+	var rng = RandomNumberGenerator.new()
+	rng.seed = hash(chunk_key) # Losowe nasionko zależne od pozycji chunku
+	var texture_index = rng.randi_range(1, 10)
+	var texture_path = "res://Textures/Grass/grass" + str(texture_index) + ".png"
+	var texture = load(texture_path)
+
+	# Debugowanie: sprawdzanie tekstury
+	if texture == null:
+		print("Nie znaleziono tekstury:", texture_path)
+	else:
+		print("Ładowanie tekstury:", texture_path)
+	
+	# Ustawienie tekstury
+	var sprite = chunk.get_node("Sprite2D")
+	if sprite:
+		sprite.texture = texture
+	else:
+		print("Nie znaleziono Sprite2D w chunku!")
+
 	add_child(chunk)
 	active_chunks[chunk_key] = chunk
 
@@ -35,3 +57,6 @@ func remove_chunk(chunk_key: Vector2):
 	if active_chunks.has(chunk_key):
 		active_chunks[chunk_key].queue_free()
 		active_chunks.erase(chunk_key)
+		
+
+

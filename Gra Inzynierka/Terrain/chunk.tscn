@@ -8,4 +8,4 @@
 texture_repeat = 2
 texture = ExtResource("1_ynq54")
 region_enabled = true
-region_rect = Rect2(256, 256, 256, 256)
+region_rect = Rect2(16, 16, 16, 16)

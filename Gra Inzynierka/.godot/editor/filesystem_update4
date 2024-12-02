@@ -10,3 +10,5 @@ res://Menu/main_menu.tscn
 res://Menu/settings_menu.tscn
 res://Menu/instruction_menu.gd
 res://Menu/settings_menu.gd
+res://World/terrain.gd
+res://Terrain/chunk.tscn
