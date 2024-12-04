@@ -8,14 +8,14 @@ var hp = 100
 var is_hurt = false # Flaga obrażeń
 var hurt_duration = 0.35 # Czas trwania animacji obrażeń (w sekundach)
 #attack
-var iceSpear = preload("res://Player/Attack/basic_attack.tscn")
-@onready var iceSpearTimer = get_node("Attack/BasicAttackTimer")
-@onready var iceSpearAttackTimer = get_node("Attack/BasicAttackTimer/BasicAttackTimer")
+var sword = preload("res://Player/Attack/sword_attack.tscn")
+@onready var swordTimer = get_node("Attack/SwordAttackTimer")
+@onready var swordAttackTimer = get_node("Attack/SwordAttackTimer/SwordAttackTimer")
 #basic attack
-var basic_attack_ammo = 0
-var basic_attack_base_ammo = 1
-var basic_attack_speed = 1.5
-var basic_attack_level = 1
+var sword_attack_ammo = 0
+var sword_attack_base_ammo = 1
+var sword_attack_speed = 1.5
+var sword_attack_level = 1
 #enemy
 var enemy_close = []
 
@@ -71,10 +71,10 @@ func update_animation(sprite):
 		walkingTimer.start()
 
 func attack():
-	if basic_attack_level > 0:
+	if sword_attack_level > 0:
 		# Timer dziala w petli dla regularnych atakow
-		iceSpearTimer.wait_time = basic_attack_speed
-		iceSpearTimer.start()
+		swordTimer.wait_time = sword_attack_speed
+		swordTimer.start()
 
 
 func _on_hurtbox_hurt(damage, _angle, _knockback):
@@ -109,24 +109,24 @@ func _end_hurt_animation():
 		idle_sprite.visible = true
 
 func _on_ice_spear_timer_timeout():
-	basic_attack_ammo += basic_attack_base_ammo
+	sword_attack_ammo += sword_attack_base_ammo
 	#Start only if there is ammo avaiable
-	if basic_attack_ammo > 0:
+	if sword_attack_ammo > 0:
 		_start_attack_cycle()
 
 func _start_attack_cycle():
-	if basic_attack_ammo > 0:
-		iceSpearAttackTimer.start()
+	if sword_attack_ammo > 0:
+		swordAttackTimer.start()
 
 
 func _on_ice_spreat_attack_timer_timeout():
-	if basic_attack_ammo > 0:
-		var basic_attack = iceSpear.instantiate() #Create instance of ice spear
-		basic_attack.position = position
-		basic_attack.target = get_random_target()
-		basic_attack.level = basic_attack_level
-		add_child(basic_attack)
-		basic_attack_ammo -= 1
+	if sword_attack_ammo > 0:
+		var sword_attack = sword.instantiate() #Create instance of ice spear
+		sword_attack.position = position
+		sword_attack.target = get_random_target()
+		sword_attack.level = sword_attack_level
+		add_child(sword_attack)
+		sword_attack_ammo -= 1
 		
 #Choosing random enemy in player area as a target
 func get_random_target():
