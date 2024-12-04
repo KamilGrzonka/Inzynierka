@@ -151,13 +151,13 @@ func _on_sword_attack_timer_timeout():
 		
 func _on_shuriken_attack_timer_timeout():
 	if shuriken_attack_ammo > 0:
-		var shuriken_attack = shuriken.instantiate() #Create instance of ice spear
+		var shuriken_attack = shuriken.instantiate() # Create instance of shuriken
 		shuriken_attack.position = position
-		shuriken_attack.target = get_random_target()
+		shuriken_attack.target = global_position # Przypisanie global_position do target
 		shuriken_attack.level = shuriken_attack_level
 		add_child(shuriken_attack)
 		shuriken_attack_ammo -= 1
-	
+
 #Choosing random enemy in player area as a target
 func get_random_target():
 	if enemy_close.size() > 0:

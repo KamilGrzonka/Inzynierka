@@ -8,3 +8,4 @@ res://Player/Attack/sword_attack.tscn
 res://Player/player.gd
 res://Player/Attack/shuriken.tscn
 res://Player/Attack/shuriken.gd
+res://Enemy/enemy.gd
