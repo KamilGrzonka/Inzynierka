@@ -54,12 +54,20 @@ collision_mask = 2
 position = Vector2(2, 0.5)
 shape = SubResource("RectangleShape2D_lil5g")
 
-[node name="Attack" type="Node2D" parent="."]
+[node name="SwordAttack" type="Node2D" parent="."]
 
-[node name="SwordAttackTimer" type="Timer" parent="Attack"]
+[node name="SwordTimer" type="Timer" parent="SwordAttack"]
 wait_time = 1.5
 
-[node name="SwordAttackTimer" type="Timer" parent="Attack/SwordAttackTimer"]
+[node name="SwordAttackTimer" type="Timer" parent="SwordAttack/SwordTimer"]
+wait_time = 0.075
+
+[node name="ShurikenAttack" type="Node2D" parent="."]
+
+[node name="ShurikenTimer" type="Timer" parent="ShurikenAttack"]
+wait_time = 1.5
+
+[node name="ShurikenAttackTimer" type="Timer" parent="ShurikenAttack/ShurikenTimer"]
 wait_time = 0.075
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -71,8 +79,10 @@ monitorable = false
 shape = SubResource("CircleShape2D_vlm2q")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
-[connection signal="timeout" from="Attack/SwordAttackTimer" to="." method="_on_ice_spear_timer_timeout"]
-[connection signal="timeout" from="Attack/SwordAttackTimer/SwordAttackTimer" to="." method="_on_ice_spreat_attack_timer_timeout"]
+[connection signal="timeout" from="SwordAttack/SwordTimer" to="." method="_on_ice_spear_timer_timeout"]
+[connection signal="timeout" from="SwordAttack/SwordTimer/SwordAttackTimer" to="." method="_on_ice_spreat_attack_timer_timeout"]
+[connection signal="timeout" from="ShurikenAttack/ShurikenTimer" to="." method="_on_ice_spear_timer_timeout"]
+[connection signal="timeout" from="ShurikenAttack/ShurikenTimer/ShurikenAttackTimer" to="." method="_on_ice_spreat_attack_timer_timeout"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 

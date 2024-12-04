@@ -9,13 +9,21 @@ var is_hurt = false # Flaga obrażeń
 var hurt_duration = 0.35 # Czas trwania animacji obrażeń (w sekundach)
 #attack
 var sword = preload("res://Player/Attack/sword_attack.tscn")
-@onready var swordTimer = get_node("Attack/SwordAttackTimer")
-@onready var swordAttackTimer = get_node("Attack/SwordAttackTimer/SwordAttackTimer")
+@onready var swordTimer = get_node("SwordAttack/SwordTimer")
+@onready var swordAttackTimer = get_node("SwordAttack/SwordTimer/SwordAttackTimer")
+var shuriken = preload("res://Player/Attack/shuriken.tscn")
+@onready var shurikenTimer = get_node("ShurikenAttack/ShurikenTimer")
+@onready var shurikenAttackTimer = get_node("ShurikenAttack/ShurikenTimer/ShurikenAttackTimer")
 #basic attack
 var sword_attack_ammo = 0
 var sword_attack_base_ammo = 1
 var sword_attack_speed = 1.5
 var sword_attack_level = 1
+#basic attack
+var shuriken_attack_ammo = 0
+var shuriken_attack_base_ammo = 1
+var shuriken_attack_speed = 1.5
+var shuriken_attack_level = 1
 #enemy
 var enemy_close = []
 
