@@ -83,6 +83,11 @@ func attack():
 		# Timer dziala w petli dla regularnych atakow
 		swordTimer.wait_time = sword_attack_speed
 		swordTimer.start()
+	if shuriken_attack_level > 0:
+		# Timer dziala w petli dla regularnych atakow
+		shurikenTimer.wait_time = shuriken_attack_speed
+		shurikenTimer.start()
+		
 
 
 func _on_hurtbox_hurt(damage, _angle, _knockback):
@@ -116,18 +121,26 @@ func _end_hurt_animation():
 	else:
 		idle_sprite.visible = true
 
-func _on_ice_spear_timer_timeout():
+func _on_sword_timer_timeout():
 	sword_attack_ammo += sword_attack_base_ammo
 	#Start only if there is ammo avaiable
 	if sword_attack_ammo > 0:
 		_start_attack_cycle()
 
+func _on_shuriken_timer_timeout():
+	shuriken_attack_ammo += shuriken_attack_base_ammo
+	#Start only if there is ammo avaiable
+	if shuriken_attack_ammo > 0:
+		_start_attack_cycle()
+
 func _start_attack_cycle():
 	if sword_attack_ammo > 0:
 		swordAttackTimer.start()
+	if shuriken_attack_ammo > 0:
+		shurikenAttackTimer.start()
 
 
-func _on_ice_spreat_attack_timer_timeout():
+func _on_sword_attack_timer_timeout():
 	if sword_attack_ammo > 0:
 		var sword_attack = sword.instantiate() #Create instance of ice spear
 		sword_attack.position = position
@@ -136,6 +149,15 @@ func _on_ice_spreat_attack_timer_timeout():
 		add_child(sword_attack)
 		sword_attack_ammo -= 1
 		
+func _on_shuriken_attack_timer_timeout():
+	if shuriken_attack_ammo > 0:
+		var shuriken_attack = shuriken.instantiate() #Create instance of ice spear
+		shuriken_attack.position = position
+		shuriken_attack.target = get_random_target()
+		shuriken_attack.level = shuriken_attack_level
+		add_child(shuriken_attack)
+		shuriken_attack_ammo -= 1
+	
 #Choosing random enemy in player area as a target
 func get_random_target():
 	if enemy_close.size() > 0:
@@ -152,3 +174,9 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if enemy_close.has(body):
 		enemy_close.erase(body)
+
+
+
+
+
+
