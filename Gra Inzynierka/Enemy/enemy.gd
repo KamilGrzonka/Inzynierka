@@ -9,11 +9,13 @@ var knockback = Vector2.ZERO
 func _ready(): #executes once at the begging
 	anim.play("walking") #starts animation
 func _physics_process(_delta):
-	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
-	var direction = global_position.direction_to(player.global_position) #direction is based on player's position
-	velocity=direction*movement_speed
-	velocity+=knockback
-	move_and_slide() 
+	#knockback = knockback.lerp(Vector2.ZERO, knockback_recovery * _delta)  # Używamy lerp na Vector2
+
+	var direction = global_position.direction_to(player.global_position)
+	velocity = direction * movement_speed
+	#velocity += knockback  # Dodajemy knockback do prędkości
+
+	move_and_slide()  # Ruch postaci
 
 	if direction.x > 0.1:
 		sprite.flip_h = true

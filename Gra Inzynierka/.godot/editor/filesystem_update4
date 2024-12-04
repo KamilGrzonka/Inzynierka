@@ -1,11 +1,10 @@
-res://Player/player.tscn
-res://Utilities/Spawner/spawner.gd
 res://World/world.tscn
+res://Utilities/Spawner/spawner.gd
+res://Enemy/enemy.gd
+res://Player/player.tscn
 res://Enemy/enemy.tscn
 res://Utilities/Hitbox/hitbox.tscn
 res://Utilities/Hurtbox/hurtbox.tscn
 res://Player/Attack/sword_attack.tscn
-res://Player/player.gd
 res://Player/Attack/shuriken.tscn
 res://Player/Attack/shuriken.gd
-res://Enemy/enemy.gd
