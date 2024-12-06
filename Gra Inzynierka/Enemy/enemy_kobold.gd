@@ -2,12 +2,18 @@ extends CharacterBody2D
 @export var hp = 10 #health points of enemy 
 @export var movement_speed = 30.0 #movement speed can be changed in Editor
 @export var knockback_recovery = 3
+@export var damage = 1
 var knockback = Vector2.ZERO
+
 @onready var sprite = $Sprite2D
 @onready var anim = $AnimationPlayer
+@onready var hitbox = $Hitbox
 @onready var player = get_tree().get_first_node_in_group("Player") #checks first node in the group, the only node is player so it will track player
+
 func _ready(): #executes once at the begging
 	anim.play("walking") #starts animation
+	hitbox.damage = damage
+	
 func _physics_process(_delta):
 	#knockback = knockback.lerp(Vector2.ZERO, knockback_recovery * _delta)  # Używamy lerp na Vector2
 

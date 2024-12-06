@@ -1,8 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://bojm46030leiq"]
+[gd_scene load_steps=17 format=3 uid="uid://bojm46030leiq"]
 
 [ext_resource type="PackedScene" uid="uid://bpynx7u1yjy1t" path="res://Player/player.tscn" id="2_loxar"]
 [ext_resource type="Script" path="res://World/terrain.gd" id="2_v1hf4"]
 [ext_resource type="PackedScene" uid="uid://dideoxoxls2gj" path="res://Utilities/Spawner/spawner.tscn" id="3_jkot2"]
+[ext_resource type="PackedScene" uid="uid://bem6q4wgp6tg0" path="res://Enemy/enemy_kobold.tscn" id="4_toegh"]
+[ext_resource type="Script" path="res://Utilities/Spawner/spawn_info.gd" id="5_3obos"]
+[ext_resource type="PackedScene" uid="uid://pn42l034l5gf" path="res://Enemy/enemy_kobold_warrior.tscn" id="6_2sfk1"]
+[ext_resource type="PackedScene" uid="uid://b7gi5x2nu2b2r" path="res://Enemy/enemy_cyclop.tscn" id="7_8ogys"]
+[ext_resource type="PackedScene" uid="uid://ov8hng8ka637" path="res://Enemy/enemy_boss.tscn" id="8_46emx"]
+
+[sub_resource type="Resource" id="Resource_nfu1q"]
+script = ExtResource("5_3obos")
+time_start = 0
+time_end = 30
+enemy = ExtResource("4_toegh")
+enemy_number = 1
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_oudlq"]
+script = ExtResource("5_3obos")
+time_start = 30
+time_end = 210
+enemy = ExtResource("4_toegh")
+enemy_number = 2
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_bf8xy"]
+script = ExtResource("5_3obos")
+time_start = 60
+time_end = 180
+enemy = ExtResource("6_2sfk1")
+enemy_number = 1
+enemy_spawn_delay = 1
+
+[sub_resource type="Resource" id="Resource_svqk8"]
+script = ExtResource("5_3obos")
+time_start = 180
+time_end = 210
+enemy = ExtResource("7_8ogys")
+enemy_number = 1
+enemy_spawn_delay = 4
+
+[sub_resource type="Resource" id="Resource_85jv3"]
+script = ExtResource("5_3obos")
+time_start = 210
+time_end = 240
+enemy = ExtResource("6_2sfk1")
+enemy_number = 2
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_xg2tu"]
+script = ExtResource("5_3obos")
+time_start = 240
+time_end = 270
+enemy = ExtResource("7_8ogys")
+enemy_number = 1
+enemy_spawn_delay = 2
+
+[sub_resource type="Resource" id="Resource_0bd4f"]
+script = ExtResource("5_3obos")
+time_start = 270
+time_end = 300
+enemy = ExtResource("6_2sfk1")
+enemy_number = 3
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_6ou42"]
+script = ExtResource("5_3obos")
+time_start = 300
+time_end = 301
+enemy = ExtResource("8_46emx")
+enemy_number = 1
+enemy_spawn_delay = 0
 
 [node name="World" type="Node2D"]
 position = Vector2(-1, 0)
@@ -13,3 +82,4 @@ script = ExtResource("2_v1hf4")
 [node name="Player" parent="." instance=ExtResource("2_loxar")]
 
 [node name="Spawner" parent="." instance=ExtResource("3_jkot2")]
+spawns = Array[ExtResource("5_3obos")]([SubResource("Resource_nfu1q"), SubResource("Resource_oudlq"), SubResource("Resource_bf8xy"), SubResource("Resource_svqk8"), SubResource("Resource_85jv3"), SubResource("Resource_xg2tu"), SubResource("Resource_0bd4f"), SubResource("Resource_6ou42")])

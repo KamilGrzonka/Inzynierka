@@ -20,13 +20,11 @@ func _ready():
 	# Ustaw początkową pozycję na orbicie
 	angle = 0
 	global_position = player.global_position + Vector2(orbit_radius, 0)
-
 	# Skalowanie wejścia
 	scale = Vector2(0.1, 0.1)
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1, 1) * attack_size, 1).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 	tween.play()
-
 	# Ustaw timer na czas życia
 	timer.wait_time = orbit_duration
 	timer.one_shot = true
@@ -39,7 +37,6 @@ func _physics_process(delta):
 	angle += orbit_speed * delta # Aktualizuj kąt
 	if angle > TAU: # Jeśli kąt przekroczy 360 stopni, zresetuj go
 		angle -= TAU
-
 	# Oblicz nową pozycję globalną na podstawie orbity
 	global_position = player.global_position + Vector2(orbit_radius, 0).rotated(angle)
 
