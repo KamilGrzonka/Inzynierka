@@ -5,6 +5,10 @@ extends Node2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 var time = 0
 
+signal changetime(time)
+
+func _ready():
+	connect("changetime", Callable(player, "change_time"))
 
 func _on_timer_timeout():
 	time += 1 #increase timer by 1
@@ -22,7 +26,7 @@ func _on_timer_timeout():
 					enemy_spawn.global_position = get_random_position() #set global_position
 					add_child(enemy_spawn) #adding enemy to the world
 					counter += 1 #increase until all enemies are spawned
-					
+	emit_signal("changetime", time)
 
 
 func get_random_position():

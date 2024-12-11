@@ -15,7 +15,7 @@ func _ready(): #executes once at the begging
 	hitbox.damage = damage
 	
 func _physics_process(_delta):
-	#knockback = knockback.lerp(Vector2.ZERO, knockback_recovery * _delta)  # Używamy lerp na Vector2
+	#knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
 
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * movement_speed

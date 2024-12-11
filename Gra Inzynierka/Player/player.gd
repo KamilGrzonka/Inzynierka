@@ -3,17 +3,21 @@ extends CharacterBody2D
 @onready var run_sprite = $RunSprite #get sprite
 @onready var hurt_sprite = $HurtSprite #get sprite
 @onready var walkingTimer = get_node("walkingTimer") #get timer
+@onready var healtBar = get_node("%HealthBar") #get health bar
+@onready var igTimer = get_node("%IGTimer") #get in game timer
+var time = 0
 var movement_speed = 50.0
 var hp = 100
+var maxhp = 100
 var is_hurt = false # Flaga obrażeń
 var hurt_duration = 0.35 # Czas trwania animacji obrażeń (w sekundach)
 #attack
 var sword = preload("res://Player/Attack/sword_attack.tscn")
-@onready var swordTimer = get_node("SwordAttack/SwordTimer")
-@onready var swordAttackTimer = get_node("SwordAttack/SwordTimer/SwordAttackTimer")
+@onready var swordTimer = get_node("%SwordTimer")
+@onready var swordAttackTimer = get_node("%SwordAttackTimer")
 var shuriken = preload("res://Player/Attack/shuriken.tscn")
-@onready var shurikenTimer = get_node("ShurikenAttack/ShurikenTimer")
-@onready var shurikenAttackTimer = get_node("ShurikenAttack/ShurikenTimer/ShurikenAttackTimer")
+@onready var shurikenTimer = get_node("%ShurikenTimer")
+@onready var shurikenAttackTimer = get_node("%ShurikenAttackTimer")
 #basic attack
 var sword_attack_ammo = 0
 var sword_attack_base_ammo = 1
@@ -29,6 +33,7 @@ var enemy_close = []
 
 func _ready():
 	attack()
+	_on_hurtbox_hurt(0,0,0)
 
 func _physics_process(_delta): #once every 60th frame, checks what key is being pressed and 
 	movement()
@@ -95,6 +100,8 @@ func _on_hurtbox_hurt(damage, _angle, _knockback):
 		return
 
 	hp -= damage # Player takes damage
+	healtBar.max_value = maxhp
+	healtBar.value = hp
 	print(hp)
 	is_hurt = true
 	hurt_sprite.visible = true
@@ -174,6 +181,16 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if enemy_close.has(body):
 		enemy_close.erase(body)
+		
+func change_time(argtime=0):
+	time = argtime
+	var get_min = int(time/60)
+	var get_sec = time % 60
+	if get_min < 10:
+		get_min = str(0, get_min)
+	if get_sec < 10:
+		get_sec = str(0, get_sec)
+	igTimer.text = str(get_min,":",get_sec)
 
 
 

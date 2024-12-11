@@ -1,3 +1,7 @@
+Label
+TextureProgressBar
+Control
+CanvasLayer
 AudioStreamPlayer
 Timer
 CollisionShape2D
@@ -5,10 +9,6 @@ Sprite2D
 Area2D
 Button
 RichTextLabel
-Control
 TextEdit
-Label
 ColorRect
 TextureRect
-VBoxContainer
-Node2D

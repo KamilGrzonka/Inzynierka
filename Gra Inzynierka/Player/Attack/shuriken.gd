@@ -1,9 +1,9 @@
 extends Area2D
 
-var target: Vector2 # Zmienna target jako Vector2
+var target= Vector2.ZERO # Zmienna target jako Vector2
 var level = 1
 var hp = 1
-var speed = 100 # To zmienimy na prędkość rotacji
+var speed = 100 # prędkość rotacji
 var damage = 5
 var knockback_value = 100
 var attack_size = 1.0
@@ -13,7 +13,7 @@ var orbit_radius = 50 # Promień orbity
 var orbit_speed = 2.0 # Prędkość obrotu (w radianach na sekundę)
 
 @onready var player = get_tree().get_first_node_in_group("Player") # Znajdź gracza
-var angle = 0 # Aktualny kąt orbity (w radianach)
+var angle = Vector2.ZERO # Aktualny kąt orbity (w radianach)
 var timer = Timer.new() # Timer życia shurikena
 
 func _ready():

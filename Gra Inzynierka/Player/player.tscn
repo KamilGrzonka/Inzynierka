@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpynx7u1yjy1t"]
+[gd_scene load_steps=12 format=3 uid="uid://bpynx7u1yjy1t"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_jha0h"]
 [ext_resource type="Texture2D" uid="uid://cbmgfmp22d4gx" path="res://Textures/Player/RUN.png" id="2_1lojs"]
 [ext_resource type="Texture2D" uid="uid://cylnsx2tuspon" path="res://Textures/Player/IDLE.png" id="2_5g1om"]
 [ext_resource type="PackedScene" uid="uid://cb1gfpviskg3s" path="res://Utilities/Hurtbox/hurtbox.tscn" id="3_vvk4r"]
 [ext_resource type="Texture2D" uid="uid://40hny64pf50b" path="res://Textures/Player/HURT.png" id="4_elibo"]
+[ext_resource type="Texture2D" uid="uid://cs3tbxo8c3bi4" path="res://Textures/GUI/healthbar.png" id="6_8ut0u"]
+[ext_resource type="Texture2D" uid="uid://d3gm2t4h60ejt" path="res://Textures/GUI/health.png" id="7_u8jrc"]
+[ext_resource type="FontFile" uid="uid://4dsv5j6dhxay" path="res://Font/The Last Shuriken.ttf" id="8_olsry"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58lxu"]
 radius = 4.0
@@ -57,17 +60,21 @@ shape = SubResource("RectangleShape2D_lil5g")
 [node name="SwordAttack" type="Node2D" parent="."]
 
 [node name="SwordTimer" type="Timer" parent="SwordAttack"]
+unique_name_in_owner = true
 wait_time = 1.5
 
 [node name="SwordAttackTimer" type="Timer" parent="SwordAttack/SwordTimer"]
+unique_name_in_owner = true
 wait_time = 0.075
 
 [node name="ShurikenAttack" type="Node2D" parent="."]
 
 [node name="ShurikenTimer" type="Timer" parent="ShurikenAttack"]
+unique_name_in_owner = true
 wait_time = 1.5
 
 [node name="ShurikenAttackTimer" type="Timer" parent="ShurikenAttack/ShurikenTimer"]
+unique_name_in_owner = true
 wait_time = 0.075
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -77,6 +84,41 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_vlm2q")
+
+[node name="GUILayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" type="Control" parent="GUILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="GUILayer/GUI"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 0
+offset_left = 304.0
+offset_top = 155.0
+offset_right = 336.0
+offset_bottom = 163.0
+value = 50.0
+texture_over = ExtResource("6_8ut0u")
+texture_progress = ExtResource("7_u8jrc")
+
+[node name="IGTimer" type="Label" parent="GUILayer/GUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 280.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 34.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("8_olsry")
+theme_override_font_sizes/font_size = 20
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="timeout" from="SwordAttack/SwordTimer" to="." method="_on_sword_timer_timeout"]
