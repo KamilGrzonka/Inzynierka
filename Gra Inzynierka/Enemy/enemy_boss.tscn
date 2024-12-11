@@ -61,7 +61,7 @@ script = ExtResource("1_4xnmn")
 hp = 500
 movement_speed = 25.0
 knockback_recovery = 10
-damage = 30
+enemy_damage = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)

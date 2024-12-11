@@ -5,6 +5,12 @@ extends CharacterBody2D
 @onready var walkingTimer = get_node("walkingTimer") #get timer
 @onready var healtBar = get_node("%HealthBar") #get health bar
 @onready var igTimer = get_node("%IGTimer") #get in game timer
+@onready var deathScreen = get_node("%DeathScreen") #get death screen
+@onready var lblResult = get_node("%lblResult") #get result label
+@onready var victorySound = get_node("%VicotrySound") #get vitory sound
+@onready var deathSound = get_node("%DeathSound") #get death sound
+
+
 var time = 0
 var movement_speed = 50.0
 var hp = 100
@@ -117,6 +123,9 @@ func _on_hurtbox_hurt(damage, _angle, _knockback):
 
 	hurt_timer.timeout.connect(_end_hurt_animation)
 	hurt_timer.start()
+	
+	if hp<=0:
+		death()
 
 func _end_hurt_animation():
 	is_hurt = false # Reset hurt state
@@ -191,9 +200,20 @@ func change_time(argtime=0):
 	if get_sec < 10:
 		get_sec = str(0, get_sec)
 	igTimer.text = str(get_min,":",get_sec)
+	
+func death():
+	deathScreen.visible = true
+	get_tree().paused = true
+	var tween = deathScreen.create_tween()
+	tween.tween_property(deathScreen, "position", Vector2(220,50), 3.0).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
+	tween.play()
+	if time >= 300:
+		lblResult.text = "Wygrałeś"
+		victorySound.play()
+	else:
+		lblResult.text = "Przegrałeś"
+		deathSound.play()
 
-
-
-
-
-
+func _on_button_menu_pressed():
+	get_tree().paused = false
+	var scene = get_tree().change_scene_to_file("res://Menu/main_menu.tscn")

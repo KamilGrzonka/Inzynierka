@@ -1,4 +1,8 @@
+AudioStreamPlayer2D
+Button
+VBoxContainer
 Label
+Panel
 TextureProgressBar
 Control
 CanvasLayer
@@ -7,8 +11,4 @@ Timer
 CollisionShape2D
 Sprite2D
 Area2D
-Button
 RichTextLabel
-TextEdit
-ColorRect
-TextureRect

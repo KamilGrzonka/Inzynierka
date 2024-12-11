@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bojm46030leiq"]
+[gd_scene load_steps=19 format=3 uid="uid://bojm46030leiq"]
 
 [ext_resource type="PackedScene" uid="uid://bpynx7u1yjy1t" path="res://Player/player.tscn" id="2_loxar"]
 [ext_resource type="Script" path="res://World/terrain.gd" id="2_v1hf4"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://pn42l034l5gf" path="res://Enemy/enemy_kobold_warrior.tscn" id="6_2sfk1"]
 [ext_resource type="PackedScene" uid="uid://b7gi5x2nu2b2r" path="res://Enemy/enemy_cyclop.tscn" id="7_8ogys"]
 [ext_resource type="PackedScene" uid="uid://ov8hng8ka637" path="res://Enemy/enemy_boss.tscn" id="8_46emx"]
+[ext_resource type="AudioStream" uid="uid://4tj01msym2ts" path="res://Audio/Music/battleThemeA.mp3" id="9_eifnf"]
+[ext_resource type="Script" path="res://World/Music.gd" id="10_qdvx8"]
 
 [sub_resource type="Resource" id="Resource_nfu1q"]
 script = ExtResource("5_3obos")
@@ -68,7 +70,7 @@ enemy_spawn_delay = 0
 [sub_resource type="Resource" id="Resource_6ou42"]
 script = ExtResource("5_3obos")
 time_start = 300
-time_end = 301
+time_end = 300
 enemy = ExtResource("8_46emx")
 enemy_number = 1
 enemy_spawn_delay = 0
@@ -83,3 +85,9 @@ script = ExtResource("2_v1hf4")
 
 [node name="Spawner" parent="." instance=ExtResource("3_jkot2")]
 spawns = Array[ExtResource("5_3obos")]([SubResource("Resource_nfu1q"), SubResource("Resource_oudlq"), SubResource("Resource_bf8xy"), SubResource("Resource_svqk8"), SubResource("Resource_85jv3"), SubResource("Resource_xg2tu"), SubResource("Resource_0bd4f"), SubResource("Resource_6ou42")])
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_eifnf")
+volume_db = -15.0
+autoplay = true
+script = ExtResource("10_qdvx8")

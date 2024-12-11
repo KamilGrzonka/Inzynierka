@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d5q7fuwhqhiu"]
+[gd_scene load_steps=5 format=3 uid="uid://d5q7fuwhqhiu"]
 
 [ext_resource type="FontFile" uid="uid://dyvpwf1rs0y0a" path="res://Font/The Last Shuriken.otf" id="1_3h2ee"]
 [ext_resource type="Script" path="res://Menu/instruction_menu.gd" id="1_8o8km"]
+[ext_resource type="PackedScene" uid="uid://y02vnvxbocud" path="res://Utilities/Button/button.tscn" id="3_5bvv4"]
 
 [sub_resource type="GDScript" id="GDScript_548d0"]
 script/source = "extends RichTextLabel
@@ -53,10 +54,12 @@ bbcode_enabled = true
 text = "Pokonaj nadciągające fale wrogów i przetrwaj jak najdłużej. Zdobywał punkty doświadczenia by ulepszać postać. Steruj postacią przy pomocy klawiszy WSAD i myszki."
 script = SubResource("GDScript_548d0")
 
-[node name="BackButton" type="Button" parent="."]
-custom_minimum_size = Vector2(100, 30)
+[node name="BackButton" parent="." instance=ExtResource("3_5bvv4")]
+layout_mode = 0
 offset_left = 270.0
 offset_top = 250.0
 offset_right = 370.0
 offset_bottom = 281.0
 text = "Wróć"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

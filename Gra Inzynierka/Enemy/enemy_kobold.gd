@@ -2,7 +2,7 @@ extends CharacterBody2D
 @export var hp = 10 #health points of enemy 
 @export var movement_speed = 30.0 #movement speed can be changed in Editor
 @export var knockback_recovery = 3
-@export var damage = 1
+@export var enemy_damage = 1
 var knockback = Vector2.ZERO
 
 @onready var sprite = $Sprite2D
@@ -12,7 +12,7 @@ var knockback = Vector2.ZERO
 
 func _ready(): #executes once at the begging
 	anim.play("walking") #starts animation
-	hitbox.damage = damage
+	hitbox.damage = enemy_damage
 	
 func _physics_process(_delta):
 	#knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
