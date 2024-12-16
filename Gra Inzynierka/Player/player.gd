@@ -38,6 +38,7 @@ var shuriken_attack_level = 1
 var enemy_close = []
 
 func _ready():
+	add_to_group("Player")
 	attack()
 	_on_hurtbox_hurt(0,0,0)
 

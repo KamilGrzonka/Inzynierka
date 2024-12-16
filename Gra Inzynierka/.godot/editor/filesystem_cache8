@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733922677
+::res://::1734368698
 icon.svg::CompressedTexture2D::1730451811002220422::1733313491::1733313513::1::::<><>::
 ::res://Audio/::1733313491
 ::res://Audio/GUI/::1733313491
 click.wav::AudioStreamWAV::1135506777342889975::1733313491::1733313491::1::::<><>::
 hover.wav::AudioStreamWAV::2376137739827508527::1733313491::1733313491::1::::<><>::
-::res://Audio/Music/::1733313491
+::res://Audio/Music/::1733933250
 battleThemeA.mp3::AudioStreamMP3::2075292125607765412::1733313491::1733933250::1::::<><>::
 ::res://Audio/SoundEffect/::1733313491
 collectgem.mp3::AudioStreamMP3::5813630277965857266::1733313491::1733313491::1::::<><>::
@@ -17,12 +17,12 @@ Lose.ogg::AudioStreamOggVorbis::6291040436352873620::1733313491::1733313491::1::
 tornado.ogg::AudioStreamOggVorbis::4916904374074778844::1733313491::1733313491::1::::<><>::
 Victory.wav::AudioStreamWAV::8805668421382804537::1733313491::1733313491::1::::<><>::
 woosh.wav::AudioStreamWAV::6572762088020506391::1733313491::1733313491::1::::<><>::
-::res://Enemy/::1733932995
-enemy_boss.tscn::PackedScene::1028012598671483796::1733932995::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://dpxgcmdi34dvs::::res://Enemy/Enemy/juggernaut.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
-enemy_cyclop.tscn::PackedScene::4645390506758997667::1733932995::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://c7xa2efwkruug::::res://Enemy/Enemy/cyclops.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
+::res://Enemy/::1733933528
+enemy_boss.tscn::PackedScene::1028012598671483796::1733933528::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://dpxgcmdi34dvs::::res://Enemy/Enemy/juggernaut.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
+enemy_cyclop.tscn::PackedScene::4645390506758997667::1733933528::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://c7xa2efwkruug::::res://Enemy/Enemy/cyclops.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
 enemy_kobold.gd::GDScript::-1::1733923019::0::1::::<>CharacterBody2D<>::
-enemy_kobold.tscn::PackedScene::2693860948228936153::1733932994::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://vsjsoe6agehq::::res://Enemy/Enemy/kolbold_weak.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
-enemy_kobold_warrior.tscn::PackedScene::1081479192287297329::1733932995::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://cja4crgxjmiyo::::res://Enemy/Enemy/kolbold_warrior.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
+enemy_kobold.tscn::PackedScene::2693860948228936153::1733933528::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://vsjsoe6agehq::::res://Enemy/Enemy/kolbold_weak.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
+enemy_kobold_warrior.tscn::PackedScene::1081479192287297329::1733933528::0::1::::<><>::res://Enemy/enemy_kobold.gd<>uid://cja4crgxjmiyo::::res://Enemy/Enemy/kolbold_warrior.png<>uid://sy8dovylwuhm::::res://Utilities/Hitbox/hitbox.tscn<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn
 ::res://Enemy/Enemy/::1733522357
 cyclops.png::CompressedTexture2D::7066413487413102758::1733313491::1733313491::1::::<><>::
 explosion_pixelfied.png::CompressedTexture2D::7195878407481840770::1733313491::1733313491::1::::<><>::
@@ -35,26 +35,26 @@ OnsenJapanDemoRegular.ttf::FontFile::1925513542828997685::1733313491::1733313491
 tenderness.otf::FontFile::1898257195521713602::1733313491::1733313491::1::::<><>::
 The Last Shuriken.otf::FontFile::8888096577163873338::1733313491::1733313491::1::::<><>::
 The Last Shuriken.ttf::FontFile::2042801597323470588::1733313491::1733313491::1::::<><>::
-::res://Menu/::1733932996
+::res://Menu/::1733933528
 instruction_menu.gd::GDScript::-1::1733932990::0::1::::<>Control<>::
-instruction_menu.tscn::PackedScene::273526775347520496::1733932996::0::1::::<><>::uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf<>res://Menu/instruction_menu.gd<>uid://y02vnvxbocud::::res://Utilities/Button/button.tscn
+instruction_menu.tscn::PackedScene::273526775347520496::1733933528::0::1::::<><>::uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf<>res://Menu/instruction_menu.gd<>uid://y02vnvxbocud::::res://Utilities/Button/button.tscn
 main_menu.gd::GDScript::-1::1733931436::0::1::::<>Control<>::
-main_menu.tscn::PackedScene::862158605866425734::1733932995::0::1::::<><>::res://Menu/main_menu.gd<>uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf<>uid://y02vnvxbocud::::res://Utilities/Button/button.tscn
+main_menu.tscn::PackedScene::862158605866425734::1733933528::0::1::::<><>::res://Menu/main_menu.gd<>uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf<>uid://y02vnvxbocud::::res://Utilities/Button/button.tscn
 settings_menu.gd::GDScript::-1::1733313491::0::1::::<>Control<>::
 settings_menu.tscn::PackedScene::8486432983827586080::1733313491::0::1::::<><>::res://Menu/settings_menu.gd<>uid://dyvpwf1rs0y0a::::res://Font/The Last Shuriken.otf
-::res://Player/::1733933201
+::res://Player/::1733933528
 player.gd::GDScript::-1::1733933201::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::3489630511383866479::1733933201::0::1::::<><>::res://Player/player.gd<>uid://cbmgfmp22d4gx::::res://Textures/Player/RUN.png<>uid://cylnsx2tuspon::::res://Textures/Player/IDLE.png<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn<>uid://40hny64pf50b::::res://Textures/Player/HURT.png<>uid://cs3tbxo8c3bi4::::res://Textures/GUI/healthbar.png<>uid://d3gm2t4h60ejt::::res://Textures/GUI/health.png<>uid://4dsv5j6dhxay::::res://Font/The Last Shuriken.ttf<>uid://dxpscpwwsrcrh::::res://Audio/SoundEffect/Victory.wav<>uid://cvvortqo5xh2k::::res://Audio/SoundEffect/Lose.ogg<>uid://y02vnvxbocud::::res://Utilities/Button/button.tscn
-::res://Player/Attack/::1733932995
+player.tscn::PackedScene::3489630511383866479::1733933528::0::1::::<><>::res://Player/player.gd<>uid://cbmgfmp22d4gx::::res://Textures/Player/RUN.png<>uid://cylnsx2tuspon::::res://Textures/Player/IDLE.png<>uid://cb1gfpviskg3s::::res://Utilities/Hurtbox/hurtbox.tscn<>uid://40hny64pf50b::::res://Textures/Player/HURT.png<>uid://cs3tbxo8c3bi4::::res://Textures/GUI/healthbar.png<>uid://d3gm2t4h60ejt::::res://Textures/GUI/health.png<>uid://4dsv5j6dhxay::::res://Font/The Last Shuriken.ttf<>uid://dxpscpwwsrcrh::::res://Audio/SoundEffect/Victory.wav<>uid://cvvortqo5xh2k::::res://Audio/SoundEffect/Lose.ogg<>uid://y02vnvxbocud::::res://Utilities/Button/button.tscn
+::res://Player/Attack/::1733933528
 shuriken.gd::GDScript::-1::1733562197::0::1::::<>Area2D<>::
-shuriken.tscn::PackedScene::7699996330336791956::1733932995::0::1::::<><>::res://Player/Attack/shuriken.gd<>uid://necvvk4desl8::::res://Textures/Items/Weapons/shuriken.png
+shuriken.tscn::PackedScene::7699996330336791956::1733933528::0::1::::<><>::res://Player/Attack/shuriken.gd<>uid://necvvk4desl8::::res://Textures/Items/Weapons/shuriken.png
 sword_attack.gd::GDScript::-1::1733313491::0::1::::<>Area2D<>::
-sword_attack.tscn::PackedScene::8662894214994793186::1733932995::0::1::::<><>::res://Player/Attack/sword_attack.gd<>uid://b3d7dqj8derne::::res://Textures/Items/Weapons/sword.png<>uid://cr22ewtfhub8c::::res://Audio/SoundEffect/ice.wav
-::res://Terrain/::1733932995
-chunk.tscn::PackedScene::8861662194677371636::1733932995::0::1::::<><>::uid://bxgxjhawpgphv::::res://Textures/dirt_full_new.png
-::res://Textures/::1733313491
+sword_attack.tscn::PackedScene::8662894214994793186::1733933528::0::1::::<><>::res://Player/Attack/sword_attack.gd<>uid://b3d7dqj8derne::::res://Textures/Items/Weapons/sword.png<>uid://cr22ewtfhub8c::::res://Audio/SoundEffect/ice.wav
+::res://Terrain/::1733933528
+chunk.tscn::PackedScene::8861662194677371636::1733933528::0::1::::<><>::uid://bxgxjhawpgphv::::res://Textures/dirt_full_new.png
+::res://Textures/::1734368695
 dirt_full_new.png::CompressedTexture2D::4014563285554306079::1733313491::1733313491::1::::<><>::
-::res://Textures/Grass/::1733313491
+::res://Textures/Grass/::1734368310
 grass1.png::CompressedTexture2D::5406283760213209890::1733313491::1733313491::1::::<><>::
 grass2.png::CompressedTexture2D::5928106545785443171::1733313491::1733313491::1::::<><>::
 grass3.png::CompressedTexture2D::2164626809522012200::1733313491::1733313491::1::::<><>::
@@ -97,20 +97,23 @@ HURT.png::CompressedTexture2D::2087535453411807171::1733313491::1733313491::1:::
 IDLE.png::CompressedTexture2D::6480904485827386645::1733313491::1733313491::1::::<><>::
 player_sprite.png::CompressedTexture2D::3654446201862095603::1733313491::1733313491::1::::<><>::
 RUN.png::CompressedTexture2D::4868176629714332223::1733313491::1733313491::1::::<><>::
+::res://Textures/Traps/::1734368698
+trap.png::CompressedTexture2D::1154506463961716733::1734368299::1734368699::1::::<><>::
 ::res://Utilities/::1733923932
-::res://Utilities/Button/::1733932995
-button.tscn::PackedScene::1737819267932317907::1733932995::0::1::::<><>::res://Utilities/Button/button.gd<>uid://84av2qiqnc3h::::res://Audio/GUI/hover.wav<>uid://qgbvpd7e8cg2::::res://Audio/GUI/click.wav
+::res://Utilities/Button/::1733933528
 button.gd::GDScript::-1::1733924283::0::1::::<>Button<>::
-::res://Utilities/Hitbox/::1733932995
+button.tscn::PackedScene::1737819267932317907::1733933528::0::1::::<><>::res://Utilities/Button/button.gd<>uid://84av2qiqnc3h::::res://Audio/GUI/hover.wav<>uid://qgbvpd7e8cg2::::res://Audio/GUI/click.wav
+::res://Utilities/Hitbox/::1733933528
 hitbox.gd::GDScript::-1::1733313491::0::1::::<>Area2D<>::
-hitbox.tscn::PackedScene::1314954038598858218::1733932995::0::1::::<><>::res://Utilities/Hitbox/hitbox.gd
-::res://Utilities/Hurtbox/::1733932995
+hitbox.tscn::PackedScene::1314954038598858218::1733933528::0::1::::<><>::res://Utilities/Hitbox/hitbox.gd
+::res://Utilities/Hurtbox/::1733933528
 hurtbox.gd::GDScript::-1::1733313491::0::1::::<>Area2D<>::
-hurtbox.tscn::PackedScene::4897078084234995218::1733932995::0::1::::<><>::res://Utilities/Hurtbox/hurtbox.gd
-::res://Utilities/Spawner/::1733932995
+hurtbox.tscn::PackedScene::4897078084234995218::1733933528::0::1::::<><>::res://Utilities/Hurtbox/hurtbox.gd
+::res://Utilities/Spawner/::1733933528
 spawner.gd::GDScript::-1::1733930786::0::1::::<>Node2D<>::
-spawner.tscn::PackedScene::7727235033256244449::1733932995::0::1::::<><>::res://Utilities/Spawner/spawner.gd
+spawner.tscn::PackedScene::7727235033256244449::1733933528::0::1::::<><>::res://Utilities/Spawner/spawner.gd
 spawn_info.gd::GDScript::-1::1733521693::0::1::::Spawn_info<>Resource<>::
-::res://World/::1733932994
+::res://World/::1733933528
+Music.gd::GDScript::-1::1733933286::0::1::::<>AudioStreamPlayer2D<>::
 terrain.gd::GDScript::-1::1733562529::0::1::::<>Node2D<>::
-world.tscn::PackedScene::3388425954498534360::1733932994::0::1::::<><>::uid://bpynx7u1yjy1t::::res://Player/player.tscn<>res://World/terrain.gd<>uid://dideoxoxls2gj::::res://Utilities/Spawner/spawner.tscn<>uid://bem6q4wgp6tg0::::res://Enemy/enemy_kobold.tscn<>res://Utilities/Spawner/spawn_info.gd<>uid://pn42l034l5gf::::res://Enemy/enemy_kobold_warrior.tscn<>uid://b7gi5x2nu2b2r::::res://Enemy/enemy_cyclop.tscn<>uid://ov8hng8ka637::::res://Enemy/enemy_boss.tscn
+world.tscn::PackedScene::3388425954498534360::1733933528::0::1::::<><>::uid://bpynx7u1yjy1t::::res://Player/player.tscn<>res://World/terrain.gd<>uid://dideoxoxls2gj::::res://Utilities/Spawner/spawner.tscn<>uid://bem6q4wgp6tg0::::res://Enemy/enemy_kobold.tscn<>res://Utilities/Spawner/spawn_info.gd<>uid://pn42l034l5gf::::res://Enemy/enemy_kobold_warrior.tscn<>uid://b7gi5x2nu2b2r::::res://Enemy/enemy_cyclop.tscn<>uid://ov8hng8ka637::::res://Enemy/enemy_boss.tscn<>uid://4tj01msym2ts::::res://Audio/Music/battleThemeA.mp3<>res://World/Music.gd

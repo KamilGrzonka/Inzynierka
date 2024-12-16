@@ -1,5 +1,8 @@
-res://World/world.tscn
 res://Utilities/Spawner/spawner.gd
+res://World/terrain.gd
+res://Terrain/Traps/traps.tscn
+res://Terrain/Traps/traps.gd
+res://World/world.tscn
 res://Player/player.tscn
 res://Enemy/enemy_kobold.tscn
 res://Utilities/Hitbox/hitbox.tscn
@@ -11,11 +14,7 @@ res://Enemy/enemy_boss.tscn
 res://Terrain/chunk.tscn
 res://Player/Attack/shuriken.tscn
 res://Player/Attack/sword_attack.tscn
-res://Enemy/enemy_kobold.gd
 res://Utilities/Button/button.tscn
-res://Utilities/Button/button.gd
 res://Menu/main_menu.tscn
-res://Player/player.gd
-res://Menu/main_menu.gd
-res://Menu/instruction_menu.gd
 res://Menu/instruction_menu.tscn
+res://Player/player.gd
