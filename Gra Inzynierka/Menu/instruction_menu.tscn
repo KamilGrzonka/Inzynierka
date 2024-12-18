@@ -51,7 +51,7 @@ offset_top = 157.0
 offset_right = 640.0
 offset_bottom = 257.0
 bbcode_enabled = true
-text = "Pokonaj nadciągające fale wrogów i przetrwaj jak najdłużej. Zdobywał punkty doświadczenia by ulepszać postać. Steruj postacią przy pomocy klawiszy WSAD i myszki."
+text = "Pokonaj nadciągające fale wrogów i przetrwaj jak najdłużej. Steruj postacią przy pomocy klawiszy WSAD. Unikaj pułapek i przeszkód. By wygrać musisz pokonać finalnego boss-a."
 script = SubResource("GDScript_548d0")
 
 [node name="BackButton" parent="." instance=ExtResource("3_5bvv4")]
