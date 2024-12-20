@@ -1,13 +1,14 @@
-res://World/world.tscn
+res://Enemy/enemy_boss.tscn
 res://Utilities/Spawner/spawner.gd
+res://Enemy/enemy_boss.gd
+res://Player/player.gd
+res://World/world.tscn
 res://Player/player.tscn
 res://Enemy/enemy_kobold.tscn
 res://Utilities/Hitbox/hitbox.tscn
 res://Utilities/Hurtbox/hurtbox.tscn
 res://Utilities/Spawner/spawner.tscn
 res://Enemy/enemy_kobold_warrior.tscn
-res://Enemy/enemy_cyclop.tscn
-res://Enemy/enemy_boss.tscn
 res://Terrain/chunk.tscn
 res://Player/Attack/shuriken.tscn
 res://Player/Attack/sword_attack.tscn
@@ -15,5 +16,3 @@ res://Utilities/Button/button.tscn
 res://Menu/main_menu.tscn
 res://Menu/instruction_menu.tscn
 res://Menu/main_menu.gd
-res://Menu/instruction_menu.gd
-res://World/terrain.gd

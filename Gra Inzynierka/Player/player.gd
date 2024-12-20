@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var igTimer = get_node("%IGTimer") #get in game timer
 @onready var deathScreen = get_node("%DeathScreen") #get death screen
 @onready var lblResult = get_node("%lblResult") #get result label
-@onready var victorySound = get_node("%VicotrySound") #get vitory sound
+@onready var victorySound = get_node("%VictorySound") #get vitory sound
 @onready var deathSound = get_node("%DeathSound") #get death sound
 
 
@@ -214,6 +214,7 @@ func death():
 	else:
 		lblResult.text = "Przegrałeś"
 		deathSound.play()
+	
 
 func _on_button_menu_pressed():
 	get_tree().paused = false

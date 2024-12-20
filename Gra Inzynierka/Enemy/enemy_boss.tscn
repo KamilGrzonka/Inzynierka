@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ov8hng8ka637"]
 
-[ext_resource type="Script" path="res://Enemy/enemy_kobold.gd" id="1_4xnmn"]
+[ext_resource type="Script" path="res://Enemy/enemy_boss.gd" id="1_bet8n"]
 [ext_resource type="Texture2D" uid="uid://dpxgcmdi34dvs" path="res://Enemy/Enemy/juggernaut.png" id="2_qwkhk"]
 [ext_resource type="PackedScene" uid="uid://sy8dovylwuhm" path="res://Utilities/Hitbox/hitbox.tscn" id="3_8yjp6"]
 [ext_resource type="PackedScene" uid="uid://cb1gfpviskg3s" path="res://Utilities/Hurtbox/hurtbox.tscn" id="4_in71p"]
@@ -57,11 +57,7 @@ size = Vector2(76, 76)
 collision_layer = 5
 collision_mask = 5
 motion_mode = 1
-script = ExtResource("1_4xnmn")
-hp = 500
-movement_speed = 25.0
-knockback_recovery = 10
-enemy_damage = 20
+script = ExtResource("1_bet8n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
