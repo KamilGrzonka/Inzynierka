@@ -13,14 +13,14 @@ func update_chunks():
 	var player_chunk_x = int(player.position.x / chunk_size)
 	var player_chunk_y = int(player.position.y / chunk_size)
 
-	# Generuj chunki w obrębie render_distance
+	# generate chunks in render_distance
 	for x in range(player_chunk_x - render_distance, player_chunk_x + render_distance + 1):
 		for y in range(player_chunk_y - render_distance, player_chunk_y + render_distance + 1):
 			var chunk_key = Vector2(x, y)
 			if not active_chunks.has(chunk_key):
 				spawn_chunk(chunk_key)
 
-	# Usuń chunki poza zasięgiem
+	# delete chunks outside render_distance
 	for chunk_key in active_chunks.keys():
 		if abs(chunk_key.x - player_chunk_x) > render_distance or abs(chunk_key.y - player_chunk_y) > render_distance:
 			remove_chunk(chunk_key)
@@ -31,20 +31,20 @@ func spawn_chunk(chunk_key: Vector2):
 	chunk.position = chunk_key * chunk_size
 
 	var rng = RandomNumberGenerator.new()
-	rng.seed = hash(chunk_key) # Deterministyczne losowanie na podstawie pozycji chunku
+	rng.seed = hash(chunk_key) # deterministic randomization based on chunk position
 
-	var is_trap = rng.randi_range(1, 100) <= 1 # 1% szansy na pułapkę
+	var is_trap = rng.randi_range(1, 100) <= 1 # 1% for trap
 	var is_grass = not is_trap
 
 	if is_trap:
 		generate_trap(chunk)
 	elif is_grass:
 		generate_grass(chunk, rng)
-		# Dodaj przeszkody na trawie z szansą 2%
-		if rng.randi_range(1, 100) <= 2:
+		# add obstacle with 1% chance
+		if rng.randi_range(1, 100) <= 1:
 			generate_obstacle(chunk, rng)
 
-	# Dodanie chunku do świata
+	# adding chunk to the world
 	add_child(chunk)
 	active_chunks[chunk_key] = chunk
 

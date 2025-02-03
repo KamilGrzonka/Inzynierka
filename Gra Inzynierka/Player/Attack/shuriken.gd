@@ -5,7 +5,7 @@ var level = 1
 var hp = 1
 var speed = 100 # prędkość rotacji
 var damage = 5
-var knockback_value = 100
+#var knockback_value = 100
 var attack_size = 1.0
 
 var orbit_duration = 5.0 # Czas krążenia w sekundach
