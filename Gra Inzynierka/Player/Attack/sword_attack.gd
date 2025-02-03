@@ -18,7 +18,7 @@ func _ready():
 		1:
 			hp = 1
 			speed = 100
-			damage = 5
+			damage = 10
 			knockback_value = 100
 			attack_size = 1.0
 	#missle will start small then it will scale back to the original size

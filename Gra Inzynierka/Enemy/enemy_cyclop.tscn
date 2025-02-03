@@ -59,7 +59,7 @@ collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_ueku0")
 hp = 75
-movement_speed = 20.0
+movement_speed = 25.0
 knockback_recovery = 10
 enemy_damage = 5
 

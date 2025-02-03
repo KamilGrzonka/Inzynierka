@@ -12,7 +12,7 @@ extends CharacterBody2D
 
 
 var time = 0
-var movement_speed = 50.0
+var movement_speed = 45.0
 var hp = 100
 var maxhp = 100
 var is_hurt = false # Flaga obrażeń
@@ -27,12 +27,12 @@ var shuriken = preload("res://Player/Attack/shuriken.tscn")
 #basic attack
 var sword_attack_ammo = 0
 var sword_attack_base_ammo = 1
-var sword_attack_speed = 1.5
+var sword_attack_speed = 1
 var sword_attack_level = 1
 #basic attack
 var shuriken_attack_ammo = 0
 var shuriken_attack_base_ammo = 1
-var shuriken_attack_speed = 1.5
+var shuriken_attack_speed = 1
 var shuriken_attack_level = 1
 #enemy
 var enemy_close = []

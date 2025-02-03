@@ -4,7 +4,7 @@ var target= Vector2.ZERO # Zmienna target jako Vector2
 var level = 1
 var hp = 1
 var speed = 100 # prędkość rotacji
-var damage = 5
+var damage = 10
 #var knockback_value = 100
 var attack_size = 1.0
 

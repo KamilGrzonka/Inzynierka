@@ -64,7 +64,7 @@ shape = SubResource("RectangleShape2D_lil5g")
 
 [node name="SwordTimer" type="Timer" parent="SwordAttack"]
 unique_name_in_owner = true
-wait_time = 1.5
+wait_time = 1.75
 
 [node name="SwordAttackTimer" type="Timer" parent="SwordAttack/SwordTimer"]
 unique_name_in_owner = true

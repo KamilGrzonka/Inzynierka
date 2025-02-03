@@ -59,7 +59,7 @@ collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_roypg")
 hp = 20
-movement_speed = 40.0
+movement_speed = 45.0
 enemy_damage = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
